@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ngô Thanh Tân - Embedded Systems Intern</title>
+  <style>
+    /* ===== GLOBAL & PRINT SETTINGS ===== */
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #222;
+      background: #fff;
+      font-size: 13px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      overflow: visible !important;
+    }
+    html {
+      overflow: visible !important;
+    }
+    .container {
+      width: 100%;
+      max-width: 794px;
+      margin: 0 auto;
+      padding: 7mm 8mm;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+    h2 {
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+    hr { border: 0; border-top: 1px solid #333; margin: 6px 0 10px; }
+    p, li { margin: 2px 0; font-size: 13px; }
+    ul { padding-left: 18px; margin: 0; }
+    .section { margin-bottom: 12px; }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .avatar {
+      width: 110px; height: 110px;
+      border-radius: 50%; overflow: hidden;
+      flex-shrink: 0;
+      background: #f0f0f0;
+    }
+    .avatar img { width:100%; height:100%; object-fit:cover; }
+    .header-text { margin-left: 30px; }
+    .header-text h1 { font-size: 22px; }
+    .header-text h2 { font-size: 14px; margin-top:2px; }
+    .header-text p { font-size: 13px; margin:2px 0; }
+
+    /* Thêm CSS cho 2 cột trong header-text */
+    .header-text .header-columns {
+      display: flex;
+      gap: 24px;
+      margin-top: 4px;
+    }
+    .header-text .header-col-left,
+    .header-text .header-col-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .header-text .header-col-left {
+      min-width: 140px;
+    }
+    .header-text .header-col-right {
+      min-width: 220px;
+    }
+    @media (max-width: 600px) {
+      .header-text .header-columns {
+        flex-direction: column;
+        gap: 0;
+      }
+      .header-text .header-col-left,
+      .header-text .header-col-right {
+        min-width: 0;
+      }
+    }
+
+    #objective ul { list-style: disc; }
+    #education ul { list-style: disc; padding-left: 18px; }
+    #education li { margin-bottom: 2px; }
+    #education span { float: right; }
+    #tech-skills ul { list-style: disc; padding-left: 18px; }
+
+    /* ===== CERTIFICATES & SOFT SKILLS ===== */
+    .grid-2 {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .subsection {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .subsection ul { list-style: none; padding: 0; }
+    .subsection li::before { content: '• '; }
+    .subsection h2 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 0;
+      margin-bottom: 6px;
+    }
+
+    /* ===== PROJECTS ===== */
+    .project { margin-bottom: 10px; page-break-inside: avoid; }
+    .project .title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      margin-bottom: 4px;
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .project table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2px;
+      border: 1px solid #000;
+      table-layout: fixed;
+    }
+    .project table, .project th, .project td {
+      border: 1px solid #000;
+      box-sizing: border-box;
+    }
+    .project th, .project td {
+      padding: 5px;
+      vertical-align: top;
+      font-size: 13px;
+      word-break: break-word;
+    }
+    .project th {
+      background: #f9f9f9;
+      width: 25%;
+      white-space: nowrap;
+    }
+    .project td {
+      width: 75%;
+    }
+    @media print {
+      html, body {
+        width: auto;
+        height: auto;
+        overflow: visible !important;
+      }
+      .container {
+        max-width: none;
+        width: auto;
+        margin: 0;
+        padding: 0 6mm;
+      }
+      .section {
+        margin-bottom: 10px;
+      }
+      .grid-2 {
+        gap: 4px;
+      }
+      .project td {
+      width: 75%;
+      }
+    }
+    /* Link repo màu xanh nước */
+    .project .repo a {
+      color: #0074d9;
+      text-decoration: none;
+      word-break: break-all;
+      cursor: pointer;
+    }
+    .project .repo a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="avatar">
+        <img src="./images/avatar.jpg" alt="Avatar">
+      </div>
+      <div class="header-text">
+        <h1>Ngô Thanh Tân</h1>
+        <h2>Embedded System Intern</h2>
+        <div class="header-columns">
+          <div class="header-col-left">
+            <p>Date of Birth: 21/08/2004</p>
+            <p>Address: Thu Duc City, HCM City</p>
+          </div>
+          <div class="header-col-right">
+            <p>Email: nthanhtan2004@gmail.com</p>
+            <p>Phone: +84 327 524 504</p>
+            <p>LinkedIn: linkedin.com/in/ngothanhtan</p>
+            <p>GitHub: github.com/Thanhtan2108</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="objective">
+      <h2>Career Objective</h2>
+      <hr>
+      <ul>
+        <li>Short-term (3 months): Master core embedded programming skills in C/C++ and FreeRTOS to contribute to the company's real-world IoT solutions.</li>
+        <li>Long-term (6–12 months): Advance to a mid-level embedded software engineer, leading small-scale embedded projects.</li>
+      </ul>
+    </div>
+
+    <div class="section" id="education">
+      <h2>Education</h2>
+      <hr>
+      <ul>
+        <li><strong>Computer Engineering Technology</strong> <span>2022 – 2026</span></li>
+        <li>Ho Chi Minh City University Of Technology And Education</li>
+        <li>4th Year Student</li>
+        <li>GPA: 2.76/4.0</li>
+      </ul>
+    </div>
+
+    <div class="section" id="tech-skills">
+      <h2>Technical Skills</h2>
+      <hr>
+      <ul>
+        <li>Languages & Tools: C/C++, Git, Proteus</li>
+        <li>Microcontroller: Arduino, ESP32, Raspberry Pi</li>
+        <li>Real-Time OS: FreeRTOS (Basic on ESP32)</li>
+        <li>Protocols: I2C, SPI, UART, 1-Wire, Timer, Interrupt, PWM</li>
+        <li>Sensors & GPIO interfaces</li>
+      </ul>
+    </div>
+
+    <div class="section grid-2">
+      <div class="subsection">
+        <h2>Certificates</h2>
+        <hr>
+        <ul>
+          <li>Toeic: 400</li>
+        </ul>
+      </div>
+      <div class="subsection">
+        <h2>Soft Skills</h2>
+        <hr>
+        <ul>
+          <li>Teamwork</li>
+          <li>Problem Solving</li>
+          <li>Self-learning ability</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <hr>
+      <div class="project">
+        <div class="title">
+          <span>IoT Vegetable Garden Care System</span>
+          <span>2/2025 – 6/2025</span>
+        </div>
+        <table>
+          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT" target="_blank">https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT</a></td></tr>
+          <tr><th>Describe project</th><td>ESP32 collects environmental data from sensors (temperature, humidity, soil moisture, rain, air quality) to control pumps, fans and awnings. The Blynk interface supports manual and automatic control and data display.</td></tr>
+          <tr><th>Language</th><td>C</td></tr>
+          <tr><th>Number of members</th><td>2</td></tr>
+          <tr><th>Position</th><td>Developer</td></tr>
+          <tr><th>Responsibility</th><td>1. Design and assembly of hardware components.<br>2. Use FreeRTOS to build and develop system software.<br>3. Design the display interface and interact with the system on Blynk.<br>4. Integrate hardware and software.<br>5. Test and fix errors.</td></tr>
+          <tr><th>Tech stack</th><td>ESP32, UART, 1-Wire, I2C, GPIO, Blynk, FreeRTOS</td></tr>
+        </table>
+      </div>
+
+      <div class="project">
+        <div class="title">
+          <span>Build Character Device Driver For Raspberry Pi</span>
+          <span>10/2024 – 12/2024</span>
+        </div>
+        <table>
+          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/RTOS_RASPBERRY_PI_DS18B20" target="_blank">https://github.com/Thanhtan2108/RTOS_RASPBERRY_PI_DS18B20</a></td></tr>
+          <tr><th>Describe project</th><td>Build Character Device Driver for DS18B20 to communicate with Raspberry Pi 3B+ according to 1-Wire standard.</td></tr>
+          <tr><th>Language</th><td>C</td></tr>
+          <tr><th>Number of members</th><td>10</td></tr>
+          <tr><th>Position</th><td>Developer</td></tr>
+          <tr><th>Responsibility</th><td>1. Write Character Device Driver code for DS18B20 to communicate with Raspberry Pi 3B+.<br>2. Write code at the user layer to read data from the Driver and display the temperature on Terminal.<br>3. Write Makefile and cross-compile from Ubuntu to Raspberry Pi 3B+.<br>4. Integrate hardware and software.<br>5. Check and fix errors.</td></tr>
+          <tr><th>Tech stack</th><td>Raspberry Pi 3B+, 1-Wire, GPIO, Ubuntu</td></tr>
+        </table>
+      </div>
+
+      <div class="project">
+        <div class="title">
+          <span>IoT Flood Monitoring Station</span>
+          <span>2/2024 – 4/2024</span>
+        </div>
+        <table>
+          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/IOT_Tram_Giam_Sat_Ngap_Lut_Flood_Detection" target="_blank">https://github.com/Thanhtan2108/IOT_Tram_Giam_Sat_Ngap_Lut_Flood_Detection</a></td></tr>
+          <tr><th>Describe project</th><td>Use ESP32 to read data from the super waterproof sensor SR04T to measure water surface distance and display it on the OLED screen and synchronize with Blynk.</td></tr>
+          <tr><th>Language</th><td>C</td></tr>
+          <tr><th>Number of members</th><td>5</td></tr>
+          <tr><th>Position</th><td>Developer</td></tr>
+          <tr><th>Responsibility</th><td>1. Write code to read and write data from the sensor to EEPROM.<br>2. Design the interface displayed on Blynk.</td></tr>
+          <tr><th>Tech stack</th><td>ESP32, UART, I2C, Digital Trigger - Echo, Blynk</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
