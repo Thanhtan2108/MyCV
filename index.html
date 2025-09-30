@@ -21,9 +21,27 @@
       print-color-adjust: exact;
       overflow: visible !important;
     }
-    html {
-      overflow: visible !important;
+    
+    /* QUAN TRỌNG: CSS cho link trong PDF */
+    a {
+      color: #0074d9 !important;
+      text-decoration: none !important;
     }
+    
+    /* Đảm bảo link giữ nguyên style khi in */
+    @media print {
+      a {
+        color: #0074d9 !important;
+        text-decoration: none !important;
+      }
+      a[href] {
+        text-decoration: none !important;
+      }
+      a[href]:after {
+        content: "" !important; /* Remove any generated content */
+      }
+    }
+
     .container {
       width: 100%;
       max-width: 794px;
@@ -31,6 +49,7 @@
       padding: 7mm 8mm;
       box-sizing: border-box;
     }
+
     h1 {
       font-size: 22px;
       font-weight: bold;
@@ -86,7 +105,8 @@
       min-width: 220px;
     }
     .header-text .header-col-right a{
-      text-decoration: none;
+      color: #0074d9 !important; /* Màu chữ bình thường cho header */
+      text-decoration: none !important;
     }
     @media (max-width: 600px) {
       .header-text .header-columns {
@@ -161,6 +181,16 @@
     .project td {
       width: 75%;
     }
+    /* Link repo màu xanh nước */
+    .project .repo a {
+      color: #0074d9;
+      text-decoration: none;
+      word-break: break-all;
+      cursor: pointer;
+    }
+    .project .repo a:hover {
+      text-decoration: underline;
+    }
     @media print {
       html, body {
         width: auto;
@@ -182,16 +212,14 @@
       .project td {
       width: 75%;
       }
-    }
-    /* Link repo màu xanh nước */
-    .project .repo a {
-      color: #0074d9;
-      text-decoration: none;
-      word-break: break-all;
-      cursor: pointer;
-    }
-    .project .repo a:hover {
-      text-decoration: underline;
+      /* QUAN TRỌNG: Đảm bảo link có thể click trong PDF */
+      a {
+        color: #0074d9 !important;
+        text-decoration: none !important;
+      }
+      a[href] {
+        text-decoration: none !important;
+      }
     }
   </style>
 </head>
@@ -207,12 +235,12 @@
         <div class="header-columns">
           <div class="header-col-left">
             <p>Date of Birth: 21/08/2004</p>
-            <p>Address: Thu Duc City, HCM City</p>
+            <p>Address: Thu Duc, Ho Chi Minh City</p>
           </div>
           <div class="header-col-right">
             <p>Email: 22119227@student.hcmute.edu.vn</p>
             <p>Phone:  0327 524 504</p>
-            <a href="https://github.com/Thanhtan2108" target="_blank">Github: Thanhtan2108</a>
+            <a href="https://github.com/Thanhtan2108">Github: Thanhtan2108</a>
           </div>
         </div>
       </div>
@@ -279,7 +307,7 @@
           <span>2/2025 – 6/2025</span>
         </div>
         <table>
-          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT" target="_blank">https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT</a></td></tr>
+          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT">https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT</a></td></tr>
           <tr><th>Describe project</th><td>ESP32 collects environmental data from sensors (temperature, humidity, soil moisture, rain, air quality) to control pumps, fans and canopy.<br>The Blynk interface supports manual and automatic control and data display.</td></tr>
           <tr><th>Language</th><td>C</td></tr>
           <tr><th>Responsibility</th><td>1. Design and assembly of hardware components.<br>2. Use the xTaskCreate() API in FreeRTOS to create separate tasks to manage each sensor so that the system operates multi-threaded to build and develop system software.<br>3. Design the display interface and interact with the system on Blynk through Virtual Pins.<br>4. Integrate hardware and software.<br></td></tr>
@@ -293,7 +321,7 @@
           <span>10/2024 – 12/2024</span>
         </div>
         <table>
-          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/RTOS_RASPBERRY_PI_DS18B20" target="_blank">https://github.com/Thanhtan2108/RTOS_RASPBERRY_PI_DS18B20</a></td></tr>
+          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/RTOS_RASPBERRY_PI_DS18B20">https://github.com/Thanhtan2108/RTOS_RASPBERRY_PI_DS18B20</a></td></tr>
           <tr><th>Describe project</th><td>Build Character Device Driver for DS18B20 to communicate with Raspberry Pi 3B+ according to 1-Wire standard.</td></tr>
           <tr><th>Language</th><td>C, Makefile</td></tr>
           <tr><th>Responsibility</th><td>1. Write Character Device Driver code for DS18B20 to communicate with Raspberry Pi 3B+ using 1-wire protocol.<br>2. Write Makefile and cross-compile from Ubuntu to Raspberry Pi 3B+.<br>3. Integrate hardware and software.<br></td></tr>
@@ -307,7 +335,7 @@
           <span>2/2024 – 4/2024</span>
         </div>
         <table>
-          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/IOT_Tram_Giam_Sat_Ngap_Lut_Flood_Detection" target="_blank">https://github.com/Thanhtan2108/IOT_Tram_Giam_Sat_Ngap_Lut_Flood_Detection</a></td></tr>
+          <tr><th>Repo Github</th><td class="repo"><a href="https://github.com/Thanhtan2108/IOT_Tram_Giam_Sat_Ngap_Lut_Flood_Detection">https://github.com/Thanhtan2108/IOT_Tram_Giam_Sat_Ngap_Lut_Flood_Detection</a></td></tr>
           <tr><th>Describe project</th><td>Use ESP32 to read data from the super waterproof sensor SR04T to measure water surface distance and display it on the OLED screen and synchronize with Blynk.</td></tr>
           <tr><th>Language</th><td>C</td></tr>
           <tr><th>Responsibility</th><td>1. Write code to read and write data from the sensor to EEPROM.<br>2. Design the interface displayed on Blynk through Virtual Pins.</td></tr>
