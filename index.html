@@ -1,331 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ngo Thanh Tan - CV Intern Technical Engineer – Electronics / PCBA Production</title>
-  <style>
-    /* ===== GLOBAL & PRINT SETTINGS ===== */
-    @page {
-      size: A4;
-      margin: 10mm;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: #222;
-      background: #fff;
-      font-size: 13px;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-      overflow: visible !important;
-    }
-    
-    /* QUAN TRỌNG: CSS cho link trong PDF */
-    a {
-      color: #0074d9 !important;
-      text-decoration: none !important;
-    }
-    
-    /* Đảm bảo link giữ nguyên style khi in */
-    @media print {
-      a {
-        color: #0074d9 !important;
-        text-decoration: none !important;
-      }
-      a[href] {
-        text-decoration: none !important;
-      }
-      a[href]:after {
-        content: "" !important; /* Remove any generated content */
-      }
-    }
-
-    .container {
-      width: 100%;
-      max-width: 794px;
-      margin: 0 auto;
-      padding: 7mm 8mm;
-      box-sizing: border-box;
-    }
-
-    h1 {
-      font-size: 22px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
-    }
-    h2 {
-      font-size: 15px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-    hr { border: 0; border-top: 1px solid #333; margin: 6px 0 10px; }
-    p, li { margin: 2px 0; font-size: 13px; }
-    ul { padding-left: 18px; margin: 0; }
-    .section { margin-bottom: 12px; }
-
-    .header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-    .avatar {
-      width: 120px; height: 150px;
-      border-radius: 50%; overflow: hidden;
-      flex-shrink: 0;
-      background: #f0f0f0;
-    }
-    .avatar img { width:100%; height:100%; object-fit: cover;}
-    .header-text { margin-left: 30px; }
-    .header-text h1 { font-size: 22px; }
-    .header-text h2 { font-size: 14px; margin-top:2px; }
-    .header-text p { font-size: 13px; margin:2px 0; }
-
-    /* Thêm CSS cho 2 cột trong header-text */
-    .header-text .header-columns {
-      display: flex;
-      gap: 24px;
-      margin-top: 4px;
-    }
-    .header-text .header-col-left,
-    .header-text .header-col-right {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .header-text .header-col-left {
-      min-width: 140px;
-    }
-    .header-text .header-col-right {
-      min-width: 220px;
-    }
-    .header-text .header-col-right a{
-      color: #0074d9 !important; /* Màu chữ bình thường cho header */
-      text-decoration: none !important;
-    }
-    @media (max-width: 600px) {
-      .header-text .header-columns {
-        flex-direction: column;
-        gap: 0;
-      }
-      .header-text .header-col-left,
-      .header-text .header-col-right {
-        min-width: 0;
-      }
-    }
-
-    #objective ul { list-style: disc; }
-    #education ul { list-style: disc; padding-left: 18px; }
-    #education li { margin-bottom: 2px; }
-    #education span { float: right; }
-    #tech-skills ul { list-style: disc; padding-left: 18px; }
-
-    /* ===== CERTIFICATES & SOFT SKILLS ===== */
-    .grid-2 {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-    }
-    .subsection {
-      flex: 1 1 0;
-      min-width: 0;
-    }
-    .subsection ul { list-style: none; padding: 0; }
-    .subsection li::before { content: '• '; }
-    .subsection h2 {
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 15px;
-      font-weight: bold;
-      margin-top: 0;
-      margin-bottom: 6px;
-    }
-
-    /* ===== PROJECTS ===== */
-    .project { margin-bottom: 10px; page-break-inside: avoid; }
-    .project .title {
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-      margin-bottom: 4px;
-      font-size: 13px;
-      flex-wrap: wrap;
-    }
-    .project table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2px;
-      border: 1px solid #000;
-      table-layout: fixed;
-    }
-    .project table, .project th, .project td {
-      border: 1px solid #000;
-      box-sizing: border-box;
-    }
-    .project th, .project td {
-      padding: 5px;
-      vertical-align: top;
-      font-size: 13px;
-      word-break: break-word;
-    }
-    .project th {
-      background: #f9f9f9;
-      width: 25%;
-      white-space: nowrap;
-    }
-    .project td {
-      width: 75%;
-    }
-    /* Link repo màu xanh nước */
-    .project .repo a {
-      color: #0074d9;
-      text-decoration: none;
-      word-break: break-all;
-      cursor: pointer;
-    }
-    .project .repo a:hover {
-      text-decoration: underline;
-    }
-    @media print {
-      html, body {
-        width: auto;
-        height: auto;
-        overflow: visible !important;
-      }
-      .container {
-        max-width: none;
-        width: auto;
-        margin: 0;
-        padding: 0 6mm;
-      }
-      .section {
-        margin-bottom: 10px;
-      }
-      .grid-2 {
-        gap: 4px;
-      }
-      .project td {
-      width: 75%;
-      }
-      /* QUAN TRỌNG: Đảm bảo link có thể click trong PDF */
-      a {
-        color: #0074d9 !important;
-        text-decoration: none !important;
-      }
-      a[href] {
-        text-decoration: none !important;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <div class="avatar">
-        <img src="./images/avatar.jpg" alt="Ngô Thanh Tân – Technical Intern CV">
-      </div>
-      <div class="header-text">
-        <h1>Ngô Thanh Tân</h1>
-        <h2>Production Engineering - Electronics and Telecommunications Intern (TELEQ / VNPT Technology)</h2>
-        <div class="header-columns">
-          <div class="header-col-left">
-            <p>Date of Birth: 21/08/2004</p>
-            <p>Address: Thu Duc, Ho Chi Minh City</p>
-          </div>
-          <div class="header-col-right">
-            <p>Email: Nthanhtan2004@gmail.com</p>
-            <p>Phone:  0327 524 504</p>
-            <a href="https://github.com/Thanhtan2108">Github: Thanhtan2108</a>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - NGO THANH TAN</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>NGO THANH TAN - INTERN EMBEDDED SYSTEM</h1>
+      <div class="contact">
+        <div class="contact1">
+          <p>Email: nthanhtan2004@gmail.com</p>
+          <p>
+            Github:
+            <a href="https://github.com/Thanhtan2108" target="_blank"
+              >Thanhtan2108</a
+            >
+          </p>
+        </div>
+        <div class="contact2">
+          <p>
+            Facebook:
+            <a
+              href="https://www.facebook.com/ngo.thanh.tan.33282/"
+              target="_blank"
+              >Ngô Thanh Tân</a
+            >
+          </p>
+          <p>Mobile: +84 327 524 504</p>
         </div>
       </div>
-    </div>
-
-    <div class="section" id="objective">
-      <h2>Career Objective</h2>
-      <hr>
-      <ul>
-        <li>Desire to participate in the technical internship program at TELEQ (VNPT Technology) to learn and experience the production process of telecommunication electronic devices in a professional factory environment.</li>
-        <li>Willing to participate directly in the SMT, DIP, and testing lines to assemble, inspect and repair PCBA products, and improve practical skills in electronics manufacturing.</li>
-        <li>Improve basic experience in assembling circuits, using a multimeter, soldering and checking electronic boards.</li>
+      <h2>EDUCATION</h2>
+      <div class="education">
+        <p class="line">
+          <span class="left"
+            >Ho Chi Minh City University of Technical and Education</span
+          ><span class="right">2022 - 2026</span>
+        </p>
+        <p>Major : Computer Engineering Technology</p>
+        <p>GPA : 2.79/4</p>
+      </div>
+      <h2>SKILL SUMMARY</h2>
+      <ul class="skills">
+        <li>
+          <span class="skill-label">Languages</span
+          ><span class="skill-content">C/C++</span>
+        </li>
+        <li>
+          <span class="skill-label">MCU</span
+          ><span class="skill-content"
+            >Arduino UNO, ESP32, ESP8266, STM32F103C8T6</span
+          >
+        </li>
+        <li>
+          <span class="skill-label">Tools</span
+          ><span class="skill-content"
+            >STM32CubeIDE, Keil C, VScode + PlatformIO</span
+          >
+        </li>
+        <li>
+          <span class="skill-label">Framework</span
+          ><span class="skill-content">Arduino, ESP-IDF, FreeRTOS</span>
+        </li>
+        <li>
+          <span class="skill-label">Skills</span
+          ><span class="skill-content"
+            >Git & Github, Yocto, Drawing 1 layer PCB circuit</span
+          >
+        </li>
       </ul>
-
-    </div>
-
-    <div class="section" id="education">
-      <h2>Education</h2>
-      <hr>
-      <ul>
-        <li><strong>Computer Engineering Technology</strong> <span>2022 – 2026</span></li>
-        <li>Ho Chi Minh City University Of Technology And Education</li>
-        <li>GPA: 2.79/4</li>
-      </ul>
-    </div>
-
-    <div class="section" id="tech-skills">
-      <h2>Technical Knowledge</h2>
-      <hr>
-        <ul>
-          <li><strong>Electronics & Production Skills:</strong> Understanding of electronic components (resistors, capacitors, diodes, transistors, ICs); able to read simple schematic diagrams.</li>
-          <li>Familiar with using soldering tools, multimeters VOM, oscilloscope.</li>
-          <li>Design components, draw 1-layer PCB circuits on Proteus software</li>
-          <li><strong>Embedded Basics:</strong> Arduino, ESP8266, ESP32, for simple IoT sensor projects.</li>
-          <li>Communication protocols: I2C, SPI, UART, 1-Wire.</li>
-          <li>Tools: Proteus, Multisim, Arduino IDE, PlatformIO, Git & GitHub.</li>
-        </ul>
-    </div>
-
-    <div class="section grid-2">
-      <div class="subsection">
-        <h2>Certificates</h2>
-        <hr>
-        <ul>
-          <li>Academic Competition No. 3: FEEE ROBOTICS - THE ENDLESS MAZE</li>
-        </ul>
-      </div>
-      <div class="subsection">
-        <h2>Soft Skills</h2>
-        <hr>
-        <ul>
-          <li>Teamwork</li>
-          <li>Logical thinking</li>
-          <li>Careful and disciplined in technical operations</li>
-          <li>Willing to learn new skills quickly</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section" id="projects">
-      <h2>Projects</h2>
-      <hr>
-
+      <h2>PROJECT</h2>
       <div class="project">
-        <div class="title">
-          <span>Construction of 1-layer PCB circuit for DC 5V/12V voltage regulator circuit</span>
-          <span>3/2024 - 4/2024</span>
-        </div>
-        <table>
-          <tr><th>Project description</th><td>Build a 1-layer PCB circuit using IC L7805, L7905, L7812, L7912 to stabilize the 5VDC/12VDC output voltage from the 220VAC input that is stepped down through the coil.<br>Practice soldering, check with a multimeter and check the circuit's operation.</td></tr>
-          <tr><th>Skills</th><td>Basic soldering, reading schematics, checking with VOM, debugging circuits.</td></tr>
-        </table>
+        <p class="line">
+          <span class="left"
+            >Heart rate and SpO2 measuring device
+            <a
+              href="https://github.com/Thanhtan2108/DEVICE_HEART_RATE_AND_SPO2.git"
+              target="_blank"
+              >(See Repo)</a
+              ></span
+          ><span class="right">10/2025 - 12/2025</span>
+        </p>
+        <ul>
+          <li>Cc</li>
+          <li>Đ</li>
+          <li>Đf</li>
+          <li>Cc</li>
+          <li>Hf</li>
+        </ul>
       </div>
-
       <div class="project">
-        <div class="title">
-          <span>Assembling and Testing Simple LED Timer Circuit</span>
-          <span>2/2024 - 3/2024</span>
-        </div>
-        <table>
-          <tr><th>Describe project</th><td>Built a small PCB circuit using IC555 timer and LED. Practiced soldering, testing with a multimeter, and verifying circuit operation.</td></tr>
-          <tr><th>Skills</th><td>Basic soldering, schematic reading, testing with VOM, circuit debugging.</td></tr>
-        </table>
+        <p class="line">
+          <span class="left"
+            >Building FreeRTOS Real-Time Operating System for Smart Home System
+            <a
+              href="https://github.com/Thanhtan2108/FreeRTOS/tree/main/06_Project_Summary"
+              >(See Repo)</a
+            ></span
+          ><span class="right">10/2025 - 12/2025</span>
+        </p>
+        <ul>
+          <li>Gdg</li>
+          <li>Hvc</li>
+          <li>Cs</li>
+          <li>Nd</li>
+        </ul>
       </div>
+      <div class="project">
+        <p class="line">
+          <span class="left"
+            >Smart vegetable garden care system
+            <a
+              href="https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT.git"
+              >(See Repo)</a
+            ></span
+          ><span class="right">02/2025 - 05/2025</span>
+        </p>
+        <ul>
+          <li>Gg</li>
+          <li>Cv</li>
+          <li>Fs</li>
+          <li>Bbc</li>
+          <li>Bcb</li>
+        </ul>
+      </div>
+      <h2>CERTIFICATES</h2>
+      <p class="certificate">
+        Toeic : 480 <a href="./images/toeic.png">Certificate</a>
+      </p>
+      <p class="certificate">
+        Academic Competition No. 3: FEEE ROBOTIS - Endless Maze
+        <a href="./images/mê cung vô tận.png">Certificate</a>
+      </p>
     </div>
-  </div>
-</body>
+  </body>
 </html>
