@@ -45,89 +45,96 @@
       <ul class="skills">
         <li>
           <span class="skill-label">Languages</span
-          ><span class="skill-content">C/C++</span>
+          ><span class="skill-content">C/C++, Python (Basic)</span>
         </li>
         <li>
-          <span class="skill-label">MCU</span
+          <span class="skill-label">Microcontrollers</span
           ><span class="skill-content"
             >Arduino UNO, ESP32, ESP8266, STM32F103C8T6</span
           >
         </li>
         <li>
-          <span class="skill-label">Tools</span
-          ><span class="skill-content"
-            >STM32CubeIDE, Keil C, VScode + PlatformIO</span
-          >
+          <span class="skill-label">RTOS/Embedded OS</span
+          ><span class="skill-content">FreeRTOS, ESP-IDF, Arduino Framework</span>
         </li>
         <li>
-          <span class="skill-label">Framework</span
-          ><span class="skill-content">Arduino, ESP-IDF, FreeRTOS</span>
+          <span class="skill-label">Tools & IDEs</span
+          ><span class="skill-content"
+            >STM32CubeIDE, Keil C, VScode + PlatformIO, Git & Github</span>
         </li>
         <li>
-          <span class="skill-label">Skills</span
+          <span class="skill-label">Protocols & Interfaces</span
+          ><span class="skill-content">I2C, SPI, UART, One-Wire, ESP-NOW, ADC</span>
+        </li>
+        <li>
+          <span class="skill-label">Cloud & IoT</span
+          ><span class="skill-content">Blynk IoT, Firebase, NTP</span>
+        </li>
+        <li>
+          <span class="skill-label">Other</span
           ><span class="skill-content"
-            >Git & Github, Yocto, Drawing 1 layer PCB circuit</span
+            >Yocto, Drawing 1 layer PCB circuit, Sensor Integration, Debugging</span
           >
         </li>
       </ul>
       <h2>PROJECT</h2>
-      <div class="project">
-        <p class="line">
-          <span class="left"
-            >Heart rate and SpO2 measuring device
-            <a
-              href="https://github.com/Thanhtan2108/DEVICE_HEART_RATE_AND_SPO2.git"
-              target="_blank"
-              >(See Repo)</a
+        <div class="project">
+          <p class="line">
+            <span class="left"
+              >Heart rate and SpO2 measuring device
+              <a
+                href="https://github.com/Thanhtan2108/DEVICE_HEART_RATE_AND_SPO2.git"
+                target="_blank"
+                >(See Repo)</a
+                ></span
+            ><span class="right">9/2025 - 11/2025</span>
+          </p>
+          <ul>
+            <li>Built ESP32 & MAX30102-based monitor using infrared/red light absorption for heart rate/SpO2 measurement with OLED display</li>
+            <li>Implemented signal processing with EMA filters and peak detection algorithms for accurate health metrics calculation</li>
+            <li>Designed modular firmware with I2C communication and interrupt-driven power management for optimized performance</li>
+            <li>Integrated Firebase cloud for real-time data sync with NTP timestamps and efficient WiFi handling</li>
+          </ul>
+        </div>
+        <div class="project">
+          <p class="line">
+            <span class="left"
+              >ESP32 FreeRTOS Multitasking System
+              <a
+                href="https://github.com/Thanhtan2108/PROJECT_ESP32/tree/main/Code_Giao_Tiep_Voi_Nhieu_CamBien_LinhKien/HCSR04_MQ2_LED_BUTTON_BUZZER_LCD_FreeRTOS"
+                target="_blank"
+                >(See Repo)</a
               ></span
-          ><span class="right">10/2025 - 12/2025</span>
-        </p>
-        <ul>
-          <li>Cc</li>
-          <li>Đ</li>
-          <li>Đf</li>
-          <li>Cc</li>
-          <li>Hf</li>
-        </ul>
-      </div>
-      <div class="project">
-        <p class="line">
-          <span class="left"
-            >Building FreeRTOS Real-Time Operating System for Smart Home System
-            <a
-              href="https://github.com/Thanhtan2108/FreeRTOS/tree/main/06_Project_Summary"
-              >(See Repo)</a
-            ></span
-          ><span class="right">10/2025 - 12/2025</span>
-        </p>
-        <ul>
-          <li>Gdg</li>
-          <li>Hvc</li>
-          <li>Cs</li>
-          <li>Nd</li>
-        </ul>
-      </div>
-      <div class="project">
-        <p class="line">
-          <span class="left"
-            >Smart vegetable garden care system
-            <a
-              href="https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT.git"
-              >(See Repo)</a
-            ></span
-          ><span class="right">02/2025 - 05/2025</span>
-        </p>
-        <ul>
-          <li>Gg</li>
-          <li>Cv</li>
-          <li>Fs</li>
-          <li>Bbc</li>
-          <li>Bcb</li>
-        </ul>
-      </div>
+            ><span class="right">10/2025 - 12/2025</span>
+          </p>
+          <ul>
+              <li>Developed ESP32 system with FreeRTOS managing 5 parallel tasks for sensor reading, LED control, and music playback</li>
+              <li>Integrated MQ2 gas and HCSR04 ultrasonic sensors with I2C LCD display using SoftTimer callbacks</li>
+              <li>Implemented responsive control systems with button debouncing, melody playback, and semaphore-based LED patterns</li>
+              <li>Designed robust task synchronization using FreeRTOS semaphores and non-blocking timer callbacks</li>
+          </ul>
+        </div>
+        <div class="project">
+          <p class="line">
+            <span class="left"
+              >Smart vegetable garden care system
+              <a
+                href="https://github.com/Thanhtan2108/TakeCareOf_Vegetable_Smart_IOT.git"
+                target="_blank"
+                >(See Repo)</a
+              ></span
+            ><span class="right">02/2025 - 05/2025</span>
+          </p>
+          <ul>
+            <li>Built ESP32 & FreeRTOS system for real-time monitoring of multiple sensors (DHT11, BH1750, MQ135, soil moisture)</li>
+            <li>Implemented automatic control algorithm for canopy, irrigation, and ventilation with Blynk IoT remote control</li>
+            <li>Integrated Blynk Cloud for sensor data sync and remote commands with local OLED display via I2C</li>
+            <li>Programmed hardware communication using I2C/ADC with sensor calibration for stable operation</li>
+          </ul>
+        </div>
       <h2>CERTIFICATES</h2>
       <p class="certificate">
-        Toeic : 480 <a href="./images/toeic.png">Certificate</a>
+        TOEIC : 480 <a href="./images/toeic.png">Certificate</a>
       </p>
       <p class="certificate">
         Academic Competition No. 3: FEEE ROBOTIS - Endless Maze
